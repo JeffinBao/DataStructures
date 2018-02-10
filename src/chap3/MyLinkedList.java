@@ -190,6 +190,7 @@ public class MyLinkedList<T> implements Iterable<T> {
         // no matter shift forward or backward, tail will connect to head
         Node<T> head = getNode(0);
         Node<T> tail = getNode(size() - 1);
+        // no matter move backward or forward, old tail and head will connect to each other
         tail.next = head;
         head.prev = tail;
         if (shiftCount < 0) {
@@ -213,7 +214,7 @@ public class MyLinkedList<T> implements Iterable<T> {
     }
 
     public void erase(int idx, int eraseSize) {
-        if (idx < 0 || idx > idx - 1)
+        if (idx < 0 || idx > size() - 1)
             throw new IndexOutOfBoundsException("can not erase elements");
 
         Node<T> current = getNode(idx);

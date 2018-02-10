@@ -125,7 +125,7 @@ public class MaxSubsequenceSum {
      * @return the max sum
      */
     public int nMaxSubSum(int[] arr) {
-        int sum = Integer.MIN_VALUE;
+        int sum = Integer.MIN_VALUE; // this is different from the book, in the book sum = 0 as the initial value
         int curSum = 0;
 
         for (int i = 0; i < arr.length; i++) {
